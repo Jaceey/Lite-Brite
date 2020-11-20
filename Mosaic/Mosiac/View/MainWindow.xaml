@@ -1,0 +1,47 @@
+﻿<Window x:Class="Mosiac.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mosiac"
+        mc:Ignorable="d"
+        Title="Mosaic Board" Height="700" Width="700" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml"/>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top" Grid.Column="0" Grid.Row="0">
+            <MenuItem Header="_File" >
+                <MenuItem Header="_Open" InputGestureText="Ctrl + O" Command="{Binding OpenFileClick}"/>
+                <MenuItem Header="_Save" InputGestureText="Ctrl + S" Command="{Binding SaveFileClick}"/>
+                <MenuItem Header="_Close" Command="{Binding CloseClick}"/>
+            </MenuItem>
+            <MenuItem Header="_Game">
+                <MenuItem Header="_New" Command="{Binding NewGameClick}"/>
+                <MenuItem Header="_Random" Command="{Binding RandomClick}"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Command="{Binding AboutClick}"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel DockPanel.Dock="Bottom">
+            <Ellipse Fill="Red" Margin="25,5,5,5" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Fuchsia" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="HotPink" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Orange" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="OrangeRed" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="White" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Blue" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="DodgerBlue"  PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="LightSkyBlue"  PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Purple" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Violet" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Green"  PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="GreenYellow" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Yellow" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Gray" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+            <Ellipse Fill="Black" PreviewMouseLeftButtonDown="Ellipse_PreviewMouseLeftButtonDown" MouseMove="Ellipse_MouseMove"/>
+        </StackPanel>
+        <Grid x:Name="mosiacBoard"/>
+    </DockPanel>
+</Window>
